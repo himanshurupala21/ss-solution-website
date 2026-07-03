@@ -455,8 +455,7 @@ function HeroSection({ onNavigate }: { onNavigate: (path: string) => void }) {
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.62 }}>
           <MagneticButton onClick={() => onNavigate("/contact")}>Start Your Project</MagneticButton>
           <MagneticButton variant="secondary" onClick={() => {
-            const el = document.getElementById("projects");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
+            window.open("/portfolio.pdf", "_blank");
           }}>View Portfolio</MagneticButton>
         </motion.div>
       </motion.div>
