@@ -732,9 +732,9 @@ function App() {
   // Routing render
   return (
     <main>
-      <ScrollProgressBar />
+      {currentPath !== "/portfolio" && <ScrollProgressBar />}
       <MouseFollower />
-      <Navbar onNavigate={navigate} />
+      {currentPath !== "/portfolio" && <Navbar onNavigate={navigate} />}
       {currentPath === "/contact" ? (
         <ContactPage onNavigate={navigate} />
       ) : currentPath === "/free-consultation" ? (
