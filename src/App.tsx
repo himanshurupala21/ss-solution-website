@@ -51,6 +51,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SiGoogleads, SiMeta } from "react-icons/si";
 import { ContactPage } from "./pages/ContactPage";
 import { ConsultationPage } from "./pages/ConsultationPage";
+import { PortfolioPage } from "./pages/PortfolioPage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -455,7 +456,7 @@ function HeroSection({ onNavigate }: { onNavigate: (path: string) => void }) {
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.62 }}>
           <MagneticButton onClick={() => onNavigate("/contact")}>Start Your Project</MagneticButton>
           <MagneticButton variant="secondary" onClick={() => {
-            window.open("/portfolio.pdf", "_blank");
+            window.open("/portfolio", "_blank");
           }}>View Portfolio</MagneticButton>
         </motion.div>
       </motion.div>
@@ -738,6 +739,8 @@ function App() {
         <ContactPage onNavigate={navigate} />
       ) : currentPath === "/free-consultation" ? (
         <ConsultationPage onNavigate={navigate} />
+      ) : currentPath === "/portfolio" ? (
+        <PortfolioPage onNavigate={navigate} />
       ) : (
         <>
           <HeroSection onNavigate={navigate} />
