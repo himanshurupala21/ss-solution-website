@@ -37,7 +37,7 @@ export function PortfolioPage({ onNavigate }: PortfolioPageProps) {
       {/* PDF View Container */}
       <div className="flex-1 w-full h-full relative">
         <iframe
-          src="/portfolio.pdf#toolbar=1"
+          src="/portfolio.pdf#toolbar=0&navpanes=0"
           className="w-full h-full border-none"
           title="SS Solution Portfolio"
         />
