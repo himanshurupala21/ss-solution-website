@@ -52,6 +52,7 @@ import { SiGoogleads, SiMeta } from "react-icons/si";
 import { ContactPage } from "./pages/ContactPage";
 import { ConsultationPage } from "./pages/ConsultationPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
+import { TermsPage } from "./pages/TermsPage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -667,6 +668,7 @@ function Footer({ onNavigate }: { onNavigate: (path: string) => void }) {
         ))}
         <button onClick={() => onNavigate("/free-consultation")} className="text-left hover:text-[#00d4ff] transition-colors" style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", padding: 0, font: "inherit", fontSize: "0.9rem" }}>Free Consultation</button>
         <button onClick={() => onNavigate("/contact")} className="text-left hover:text-[#00d4ff] transition-colors" style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", padding: 0, font: "inherit", fontSize: "0.9rem" }}>Contact Us</button>
+        <button onClick={() => onNavigate("/terms")} className="text-left hover:text-[#00d4ff] transition-colors" style={{ background: "none", border: "none", color: "inherit", cursor: "pointer", padding: 0, font: "inherit", fontSize: "0.9rem" }}>Terms & Conditions</button>
       </div>
       <div>
         <h3>Contact</h3>
@@ -741,6 +743,11 @@ function App() {
         <ConsultationPage onNavigate={navigate} />
       ) : currentPath === "/portfolio" ? (
         <PortfolioPage onNavigate={navigate} />
+      ) : currentPath === "/terms" ? (
+        <>
+          <TermsPage onNavigate={navigate} />
+          <Footer onNavigate={navigate} />
+        </>
       ) : (
         <>
           <HeroSection onNavigate={navigate} />
